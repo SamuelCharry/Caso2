@@ -45,10 +45,14 @@ public class GeneradorReferencias {
                         int paginaX = (int) (posX / tamañoPagina);
                         int despX = (int) (posX % tamañoPagina);
                         referencias.add(String.format("SOBEL_X[%d][%d], %d, %d, R", fm, fn, paginaX, despX));
+                        referencias.add(String.format("SOBEL_X[%d][%d], %d, %d, R", fm, fn, paginaX, despX));
+                        referencias.add(String.format("SOBEL_X[%d][%d], %d, %d, R", fm, fn, paginaX, despX));
 
                         long posY = (fm * 3 + fn) * 4 + offsetFiltroY;
                         int paginaY = (int) (posY / tamañoPagina);
                         int despY = (int) (posY % tamañoPagina);
+                        referencias.add(String.format("SOBEL_Y[%d][%d], %d, %d, R", fm, fn, paginaY, despY));
+                        referencias.add(String.format("SOBEL_Y[%d][%d], %d, %d, R", fm, fn, paginaY, despY));
                         referencias.add(String.format("SOBEL_Y[%d][%d], %d, %d, R", fm, fn, paginaY, despY));
                     }
                 }
@@ -74,4 +78,3 @@ public class GeneradorReferencias {
         }
     }
 }
-
