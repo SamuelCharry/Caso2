@@ -1,10 +1,10 @@
 package estructurasdedatos;
 import java.util.*;
 
-public class TablaPaginas {
+public class Paginas {
     private List<Pagina> paginas;
 
-    public TablaPaginas(int numPaginas) {
+    public Paginas(int numPaginas) {
         paginas = new ArrayList<>();
         for (int i = 0; i < numPaginas; i++) {
             paginas.add(new Pagina(i));

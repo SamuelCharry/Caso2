@@ -79,7 +79,7 @@ public class GeneradorReferencias {
     }
 
     private void escribirReferencias(int filas, int columnas, int paginasTotales, List<String> referencias) throws IOException {
-        try (PrintWriter writer = new PrintWriter("referencias.txt")) {
+        try (PrintWriter writer = new PrintWriter("Referencias.txt")) {
             writer.println("TP=" + tamanoPagina);
             writer.println("NF=" + filas);
             writer.println("NC=" + columnas);

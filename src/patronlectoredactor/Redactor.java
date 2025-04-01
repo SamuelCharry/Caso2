@@ -1,14 +1,14 @@
 package patronlectoredactor;
 
 import estructurasdedatos.Pagina;
-import estructurasdedatos.TablaPaginas;
+import estructurasdedatos.Paginas;
 
 public class Redactor extends Thread {
 
-    private TablaPaginas tablaPaginas;
+    private Paginas tablaPaginas;
     private volatile boolean running = true;
 
-    public Redactor(TablaPaginas tabla) {
+    public Redactor(Paginas tabla) {
         this.tablaPaginas = tabla;
     }
 

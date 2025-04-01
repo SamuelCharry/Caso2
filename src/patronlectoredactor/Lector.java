@@ -1,18 +1,18 @@
 package patronlectoredactor;
 
-import estructurasdedatos.GestorMemoria;
 import estructurasdedatos.Pagina;
-import estructurasdedatos.TablaPaginas;
+import estructurasdedatos.Paginador;
+import estructurasdedatos.Paginas;
 import java.util.*;
 
 public class Lector extends Thread {
     private List<String> referencias;
-    private TablaPaginas tablaPaginas;
-    private GestorMemoria gestorMemoria;
+    private Paginas tablaPaginas;
+    private Paginador gestorMemoria;
     private int contadorHits = 0;
     private int contadorMisses = 0;
 
-    public Lector(List<String> refs, TablaPaginas tabla, GestorMemoria gestor) {
+    public Lector(List<String> refs, Paginas tabla, Paginador gestor) {
         this.referencias = refs;
         this.tablaPaginas = tabla;
         this.gestorMemoria = gestor;

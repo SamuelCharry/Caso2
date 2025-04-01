@@ -1,11 +1,11 @@
 package estructurasdedatos;
 import java.util.*;
 
-public class GestorMemoria {
+public class Paginador {
     private List<Marco> marcos;
-    private TablaPaginas tablaPaginas;
+    private Paginas tablaPaginas;
 
-    public GestorMemoria(int numMarcos, TablaPaginas tabla) {
+    public Paginador(int numMarcos, Paginas tabla) {
         marcos = new ArrayList<>();
         for (int i = 0; i < numMarcos; i++) {
             marcos.add(new Marco(i));

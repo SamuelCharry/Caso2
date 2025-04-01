@@ -1,5 +1,5 @@
-import estructurasdedatos.GestorMemoria;
-import estructurasdedatos.TablaPaginas;
+import estructurasdedatos.Paginador;
+import estructurasdedatos.Paginas;
 import java.io.*;
 import java.util.*;
 import patronlectoredactor.Lector;
@@ -22,8 +22,11 @@ public class Main {
                 System.out.print("Tamaño de página (bytes): ");
                 int tamañoPagina = sc.nextInt();
                 sc.nextLine();
+                System.out.println("Copy paste el nombre del archivo BMP");
+                System.out.println("Ejemplos: caso2-parrotspeq_sal.bmp    caso2-parrotspeq.bmp");
                 System.out.print("Nombre del archivo BMP: ");
                 String nombreArchivo = sc.nextLine();
+
                 GeneradorReferencias gen = new GeneradorReferencias(tamañoPagina, nombreArchivo);
                 gen.generarReferencias();
                 System.out.println("Referencias generadas en referencias.txt");
@@ -31,6 +34,8 @@ public class Main {
                 System.out.print("Número de marcos: ");
                 int numMarcos = sc.nextInt();
                 sc.nextLine();
+                System.out.println("Copy paste el nombre del archivo de referencias:");
+                System.out.println("Ejemplo: referencias.txt");
                 System.out.print("Nombre del archivo de referencias: ");
                 String nombreArchivoReferencias = sc.nextLine();
 
@@ -49,11 +54,11 @@ public class Main {
                 br.close();
 
                 
-                TablaPaginas tablaPaginas = new TablaPaginas(np);
-                GestorMemoria gestorMemoria = new GestorMemoria(numMarcos, tablaPaginas);
+                Paginas tablaPaginas = new Paginas(np);
+                Paginador Paginador = new Paginador(numMarcos, tablaPaginas);
 
                 
-                Lector lector = new Lector(referencias, tablaPaginas, gestorMemoria);
+                Lector lector = new Lector(referencias, tablaPaginas, Paginador);
                 Redactor redactor = new Redactor(tablaPaginas);
                 lector.start();
                 redactor.start();
